@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="modern-header">
-        <h1>Hello</h1>
         <h2>Eid Mubarak!</h2>
         <h2>Welcome to Mapun!</h2>
     </div>
@@ -33,8 +32,8 @@
             let C = A * 2;
             let result = ((C * C * B) / 300) * 0.454;
             let approxPrice = 750 * result;
-            approxTotalKG.innerHTML = result;
-            approxPriceElement.innerHTML = approxPrice; // Updated variable name
+            approxTotalKG.innerHTML = result.toFixed(2);
+            approxPriceElement.innerHTML = approxPrice.toFixed(2); // Updated variable name
         }
     </script>
     <style>
