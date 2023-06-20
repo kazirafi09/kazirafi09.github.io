@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapun</title>
+</head>
+<body>
+    <div class="modern-header">
+        <h2>Eid Mubarak!</h2>
+        <h2>Welcome to Mapun!</h2>
+    </div>
+    <div class="mainpart">
+        <h2>Value for A:</h2>
+        <input id="inputforA" type="text" class="modern-input" placeholder="Enter the value"><br>
+        <h2>Value for B:</h2>
+        <input id="inputforB" type="text" class="modern-input" placeholder="Enter the value"><br>
+        <button class="modern-button", onclick="FunctionForA()">Submit</button>
+        <h3>APPROX. TOTAL KG = </h3>
+        <h3 id="approxTotalKG"></h3>        
+        <h3>APPROX. PRICE = </h3>
+        <h3 id="approxPrice"></h3>
+            
+    </div>
+    <script>
+        function FunctionForA() {
+            let A = parseFloat(document.querySelector("#inputforA").value);
+            let B = parseFloat(document.querySelector("#inputforB").value);
+            let approxTotalKG = document.querySelector("#approxTotalKG");
+            let approxPriceElement = document.querySelector("#approxPrice"); // Changed variable name
+            let C = A * 2;
+            let result = ((C * C * B) / 300) * 0.454;
+            let approxPrice = 750 * result;
+            approxTotalKG.innerHTML = result;
+            approxPriceElement.innerHTML = approxPrice; // Updated variable name
+        }
+    </script>
+    <style>
+        .modern-input {
+            display: block;
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #f2f2f2;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+          }
+          
+          .modern-input:focus {
+            outline: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+          }
+        .modern-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #3498db;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+          }
+          
+          .modern-button:hover {
+            background-color: #2980b9;
+          }
+          
+          .modern-button:active {
+            background-color: #216b93;
+          }
+            
+        body {
+            background: linear-gradient(to right, #C7E9FF, #80C3FF);
+            background-size: 200% 100%;
+            animation: gradientAnimation 4s ease-in-out infinite;
+        }
+        .mainpart {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            padding-left: 20px;
+            padding-top: 20px;
+        }
+        .modern-header {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding-left: 20px;
+            text-align: center;
+        }
+        button {
+            margin-top:20px;
+        }
+        @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    </style>
+</body>
+</html>
